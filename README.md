@@ -99,107 +99,122 @@ python train_video_concat.py --base configs/video_model/dit_crossattn_14B_wanvae
 
 ## Gallery
 
-Our model can broadly reference various types of images, including humans, objects, and diverse scenarios such as try-on.  
+Our model can broadly reference various types of images, including humans, objects, and diverse scenarios such as try-on.
 This demonstrates its versatility and generalization ability across different tasks.
 
-<table style="width: 100%; border-collapse: collapse; text-align: center; border: 1px solid #ccc;">
-  <tr>
-    <th colspan="2" style="text-align: center;">
-      <strong>Kaleido Results - Reference Images to Generated Video</strong>
-    </th>
-  </tr>
+<style>
+.gallery-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  overflow-x: auto;
+}
 
-  <tr>
-    <td colspan="2" style="padding: 10px; border-bottom: 1px solid #eee;">
-      <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
-        <img src="resources/512p/2/image1.jpg" alt="Reference Image" style="height: 150px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-        <div style="font-size: 24px; color: #666;">→</div>
-        <img src='resources/512p/2/2.gif' style="height: 150px; object-fit: cover; border-radius: 4px; border: 2px solid #4CAF50;" controls autoplay loop>
-      </div>
-    </td>
-  </tr>
+.ref-images {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
 
-  <tr>
-    <td colspan="2" style="padding: 10px; border-bottom: 1px solid #eee;">
-      <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="resources/512p/3/image1.jpg" alt="Reference Image 1" style="height: 120px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-          <img src="resources/512p/3/image2.jpg" alt="Reference Image 2" style="height: 120px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-        </div>
-        <div style="font-size: 24px; color: #666;">→</div>
-        <img src='resources/512p/3/6.gif' style="height: 150px; object-fit: cover; border-radius: 4px; border: 2px solid #4CAF50;" controls autoplay loop>
-      </div>
-    </td>
-  </tr>
+.ref-images img {
+  object-fit: cover;
+  border-radius: 4px;
+  border: 2px solid #ddd;
+}
 
-  <tr>
-    <td colspan="2" style="padding: 10px; border-bottom: 1px solid #eee;">
-      <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="resources/512p/4/image1.jpg" alt="Reference Image 1" style="height: 120px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-          <img src="resources/512p/4/image2.jpg" alt="Reference Image 2" style="height: 120px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-        </div>
-        <div style="font-size: 24px; color: #666;">→</div>
-        <img src='resources/512p/4/62.gif' style="height: 150px; object-fit: cover; border-radius: 4px; border: 2px solid #4CAF50;" controls autoplay loop>
-      </div>
-    </td>
-  </tr>
+.result-gif {
+  object-fit: cover;
+  border-radius: 4px;
+  border: 2px solid #4CAF50;
+  flex-shrink: 0;
+}
 
-  <tr>
-    <td colspan="2" style="padding: 10px; border-bottom: 1px solid #eee;">
-      <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="resources/512p/5/image1.jpg" alt="Reference Image 1" style="height: 120px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-          <img src="resources/512p/5/image2.jpg" alt="Reference Image 2" style="height: 120px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-        </div>
-        <div style="font-size: 24px; color: #666;">→</div>
-        <img src='resources/512p/5/109.gif' style="height: 150px; object-fit: cover; border-radius: 4px; border: 2px solid #4CAF50;" controls autoplay loop>
-      </div>
-    </td>
-  </tr>
+.arrow {
+  font-size: 24px;
+  color: #666;
+  margin: 0 15px;
+  flex-shrink: 0;
+}
 
-  <tr>
-    <td colspan="2" style="padding: 10px; border-bottom: 1px solid #eee;">
-      <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="resources/512p/6/image1.jpg" alt="Reference Image 1" style="height: 120px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-          <img src="resources/512p/6/image2.jpg" alt="Reference Image 2" style="height: 120px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-        </div>
-        <div style="font-size: 24px; color: #666;">→</div>
-        <img src='resources/512p/6/120.gif' style="height: 150px; object-fit: cover; border-radius: 4px; border: 2px solid #4CAF50;" controls autoplay loop>
-      </div>
-    </td>
-  </tr>
+@media (max-width: 768px) {
+  .gallery-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .arrow {
+    transform: rotate(90deg);
+    margin: 5px 0;
+  }
+}
+</style>
 
-  <tr>
-    <td colspan="2" style="padding: 10px; border-bottom: 1px solid #eee;">
-      <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="resources/512p/8/image1.jpg" alt="Reference Image 1" style="height: 100px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-          <img src="resources/512p/8/image2.jpg" alt="Reference Image 2" style="height: 100px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-          <img src="resources/512p/8/image3.jpg" alt="Reference Image 3" style="height: 100px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-        </div>
-        <div style="font-size: 24px; color: #666;">→</div>
-        <img src='resources/512p/8/140.gif' style="height: 150px; object-fit: cover; border-radius: 4px; border: 2px solid #4CAF50;" controls autoplay loop>
-      </div>
-    </td>
-  </tr>
+<div class="gallery-container">
+  <div class="gallery-row">
+    <img src="resources/512p/2/image1.jpg" alt="Reference Image" style="height: 150px;">
+    <div class="arrow">→</div>
+    <img src='resources/512p/2/2.gif' style="height: 150px;" class="result-gif" controls autoplay loop>
+  </div>
 
-  <tr>
-    <td colspan="2" style="padding: 10px; border-bottom: 1px solid #eee;">
-      <div style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="resources/512p/9/subject_0.png" alt="Reference Image 1" style="height: 100px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-          <img src="resources/512p/9/subject_1.png" alt="Reference Image 2" style="height: 100px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-          <img src="resources/512p/9/subject_2.png" alt="Reference Image 3" style="height: 100px; object-fit: cover; border-radius: 4px; border: 2px solid #ddd;">
-        </div>
-        <div style="font-size: 24px; color: #666;">→</div>
-        <img src='resources/512p/9/output.gif' style="height: 150px; object-fit: cover; border-radius: 4px; border: 2px solid #4CAF50;" controls autoplay loop>
-      </div>
-    </td>
-  </tr>
+  <div class="gallery-row">
+    <div class="ref-images">
+      <img src="resources/512p/3/image1.jpg" alt="Reference Image 1" style="height: 120px;">
+      <img src="resources/512p/3/image2.jpg" alt="Reference Image 2" style="height: 120px;">
+    </div>
+    <div class="arrow">→</div>
+    <img src='resources/512p/3/6.gif' style="height: 150px;" class="result-gif" controls autoplay loop>
+  </div>
 
-</table>
+  <div class="gallery-row">
+    <div class="ref-images">
+      <img src="resources/512p/4/image1.jpg" alt="Reference Image 1" style="height: 120px;">
+      <img src="resources/512p/4/image2.jpg" alt="Reference Image 2" style="height: 120px;">
+    </div>
+    <div class="arrow">→</div>
+    <img src='resources/512p/4/62.gif' style="height: 150px;" class="result-gif" controls autoplay loop>
+  </div>
+
+  <div class="gallery-row">
+    <div class="ref-images">
+      <img src="resources/512p/5/image1.jpg" alt="Reference Image 1" style="height: 120px;">
+      <img src="resources/512p/5/image2.jpg" alt="Reference Image 2" style="height: 120px;">
+    </div>
+    <div class="arrow">→</div>
+    <img src='resources/512p/5/109.gif' style="height: 150px;" class="result-gif" controls autoplay loop>
+  </div>
+
+  <div class="gallery-row">
+    <div class="ref-images">
+      <img src="resources/512p/6/image1.jpg" alt="Reference Image 1" style="height: 120px;">
+      <img src="resources/512p/6/image2.jpg" alt="Reference Image 2" style="height: 120px;">
+    </div>
+    <div class="arrow">→</div>
+    <img src='resources/512p/6/120.gif' style="height: 150px;" class="result-gif" controls autoplay loop>
+  </div>
+
+  <div class="gallery-row">
+    <div class="ref-images">
+      <img src="resources/512p/8/image1.jpg" alt="Reference Image 1" style="height: 100px;">
+      <img src="resources/512p/8/image2.jpg" alt="Reference Image 2" style="height: 100px;">
+      <img src="resources/512p/8/image3.jpg" alt="Reference Image 3" style="height: 100px;">
+    </div>
+    <div class="arrow">→</div>
+    <img src='resources/512p/8/140.gif' style="height: 150px;" class="result-gif" controls autoplay loop>
+  </div>
+
+  <div class="gallery-row">
+    <div class="ref-images">
+      <img src="resources/512p/9/subject_0.png" alt="Reference Image 1" style="height: 100px;">
+      <img src="resources/512p/9/subject_1.png" alt="Reference Image 2" style="height: 100px;">
+      <img src="resources/512p/9/subject_2.png" alt="Reference Image 3" style="height: 100px;">
+    </div>
+    <div class="arrow">→</div>
+    <img src='resources/512p/9/output.gif' style="height: 150px;" class="result-gif" controls autoplay loop>
+  </div>
+</div>
 
 ## Todo List
 - [x] Inference codes and Training codes for Kaleido
