@@ -1,4 +1,4 @@
-# KALEIDO: OPEN-SOURCED MULTI-SUBJECT REFERENCE VIDEO GENERATION MODEL
+<!-- # KALEIDO: OPEN-SOURCED MULTI-SUBJECT REFERENCE VIDEO GENERATION MODEL
 This repository contains the official implementation of **Kaleido**, proposed in our paper:
 <a href="https://arxiv.org/abs/2510.18573#">
   <img src="https://img.shields.io/badge/arXiv-2510.18573-B31B1B.svg" style="vertical-align: middle;">
@@ -6,8 +6,42 @@ This repository contains the official implementation of **Kaleido**, proposed in
 
 <div align="center">
 <img src='resources/examples_show.png' style="width: 90%;">
+</div> -->
+<p align="center">
+  <img src="resources/kaleido-icon.png" alt="Kaleido Icon" width="30%">
+</p>
+
+<h1 align="center">KALEIDO: OPEN-SOURCED MULTI-SUBJECT REFERENCE VIDEO GENERATION MODEL</h1>
+
+<div align='center'>
+    <a href='https://scholar.google.com/citations?user=6Uqe9ewAAAAJ&hl=zh-CN&oi=sra' target='_blank'>Zhenxing Zhang</a>&emsp;
+    <a href='https://scholar.google.com/citations?user=68PC4LMAAAAJ&hl=zh-CN&oi=sra' target='_blank'>Jiayan Teng<sup>†</sup></a>&emsp;
+    <a href='https://scholar.google.com/citations?user=tgAt-gEAAAAJ&hl=zh-CN&oi=sra' target='_blank'>Zhuoyi Yang</a>&emsp;
+    <a href='#' target='_blank'>Tiankun Cao</a>&emsp;
+    <a href='#' target='_blank'>Cheng Wang</a>&emsp;
+    <a href='https://scholar.google.com/citations?user=YR4Lp0QAAAAJ&hl=zh-CN&oi=sra' target='_blank'>Xiaotao Gu</a>&emsp;
+    <a href='https://scholar.google.com/citations?user=n1zDCkQAAAAJ&hl=zh-CN&oi=ao' target='_blank'>Jie Tang</a>&emsp;
+    <a href='https://scholar.google.com/citations?user=DsEONuMAAAAJ&hl=zh-CN&oi=ao' target='_blank'>Dan Guo</a>&emsp;
+    <a href='https://scholar.google.com/citations?user=rHagaaIAAAAJ&hl=zh-CN&oi=sra' target='_blank'>Meng Wang<sup>*</sup></a>
+</div>
+<div align='center'>
+    <br><sup>*</sup>Corresponding Author, <sup>†</sup>Project Lead
+    <br><strong>Hefei University of Technology • Tsinghua University • Zhipu AI</strong>
 </div>
 
+<div align="center">
+  <a href='https://arxiv.org/abs/2510.18573'><img src='https://img.shields.io/badge/arXiv-2510.18573-red'></a>
+  <a href='https://huggingface.co/Crilias/Kaleido-14B-S2V'><img src='https://img.shields.io/badge/%F0%9F%A4%97_HuggingFace-Model-blue'></a>
+  <a href='https://criliasmiller.github.io/Kaleido_Project/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
+</div>
+
+---
+
+<p align="center">
+  <img src='resources/examples_show.png' alt='Examples' width='90%'>
+</p>
+
+---
 ## Update and News
 
 * 2025.10.28: 🔥 We release the checkpoints of Kaleido-14B-S2V.
