@@ -136,103 +136,99 @@ python train_video_concat.py --base configs/video_model/dit_crossattn_14B_wanvae
 Our model can broadly reference various types of images, including humans, objects, and diverse scenarios such as try-on.
 This demonstrates its versatility and generalization ability across different tasks.
 
-<table style="width: 100%; border-collapse: collapse; text-align: center; border: 1px solid #ccc; table-layout: fixed;">
-  <colgroup>
-    <col style="width: 45%;">
-    <col style="width: 55%;">
-  </colgroup>
+<table style="width: 100%; border-collapse: collapse; text-align: center; border: 1px solid #ccc; table-layout: auto;">
   <tr>
-    <th style="text-align: center;">
+    <th style="text-align: center; width: 40%;">
       <strong>Reference Images</strong>
     </th>
-    <th style="text-align: center;">
+    <th style="text-align: center; width: 60%;">
       <strong>Kaleido Results</strong>
     </th>
   </tr>
 
 
   <tr>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <img src="resources/512p/2/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 100%; object-fit: contain;">
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 40%;">
+      <img src="resources/512p/2/image1.jpg" alt="Image 1" style="height: 200px; object-fit: contain;">
     </td>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <img src='resources/512p/2/2.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
-    </td>
-  </tr>
-
-  <tr>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
-        <img src="resources/512p/3/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 48%; object-fit: contain;">
-        <img src="resources/512p/3/image2.jpg" alt="Image 2" style="max-height: 150px; max-width: 48%; object-fit: contain;">
-      </div>
-    </td>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <img src='resources/512p/3/6.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 60%;">
+      <img src='resources/512p/2/2.gif' style="height: 200px; object-fit: contain;" controls autoplay loop>
     </td>
   </tr>
 
   <tr>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
-        <img src="resources/512p/4/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 48%; object-fit: contain;">
-        <img src="resources/512p/4/image2.jpg" alt="Image 2" style="max-height: 150px; max-width: 48%; object-fit: contain;">
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 40%;">
+      <div style="display: flex; justify-content: center; gap: 10px; align-items: center;">
+        <img src="resources/512p/3/image1.jpg" alt="Image 1" style="height: 100px; object-fit: contain;">
+        <img src="resources/512p/3/image2.jpg" alt="Image 2" style="height: 100px; object-fit: contain;">
       </div>
     </td>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <img src='resources/512p/4/62.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
-    </td>
-  </tr>
-
-
-  <tr>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
-        <img src="resources/512p/5/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 48%; object-fit: contain;">
-        <img src="resources/512p/5/image2.jpg" alt="Image 2" style="max-height: 150px; max-width: 48%; object-fit: contain;">
-      </div>
-    </td>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <img src='resources/512p/5/109.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 60%;">
+      <img src='resources/512p/3/6.gif' style="height: 200px; object-fit: contain;" controls autoplay loop>
     </td>
   </tr>
 
   <tr>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
-        <img src="resources/512p/6/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 48%; object-fit: contain;">
-        <img src="resources/512p/6/image2.jpg" alt="Image 2" style="max-height: 150px; max-width: 48%; object-fit: contain;">
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 40%;">
+      <div style="display: flex; justify-content: center; gap: 10px; align-items: center;">
+        <img src="resources/512p/4/image1.jpg" alt="Image 1" style="height: 100px; object-fit: contain;">
+        <img src="resources/512p/4/image2.jpg" alt="Image 2" style="height: 100px; object-fit: contain;">
       </div>
     </td>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <img src='resources/512p/6/120.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 60%;">
+      <img src='resources/512p/4/62.gif' style="height: 200px; object-fit: contain;" controls autoplay loop>
     </td>
   </tr>
 
 
   <tr>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
-        <img src="resources/512p/8/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 31%; object-fit: contain;">
-        <img src="resources/512p/8/image2.jpg" alt="Image 2" style="max-height: 150px; max-width: 31%; object-fit: contain;">
-        <img src="resources/512p/8/image3.jpg" alt="Image 3" style="max-height: 150px; max-width: 31%; object-fit: contain;">
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 40%;">
+      <div style="display: flex; justify-content: center; gap: 10px; align-items: center;">
+        <img src="resources/512p/5/image1.jpg" alt="Image 1" style="height: 100px; object-fit: contain;">
+        <img src="resources/512p/5/image2.jpg" alt="Image 2" style="height: 100px; object-fit: contain;">
       </div>
     </td>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <img src='resources/512p/8/140.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 60%;">
+      <img src='resources/512p/5/109.gif' style="height: 200px; object-fit: contain;" controls autoplay loop>
     </td>
   </tr>
 
   <tr>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
-        <img src="resources/512p/9/subject_0.png" alt="Image 1" style="max-height: 150px; max-width: 31%; object-fit: contain;">
-        <img src="resources/512p/9/subject_1.png" alt="Image 2" style="max-height: 150px; max-width: 31%; object-fit: contain;">
-        <img src="resources/512p/9/subject_2.png" alt="Image 3" style="max-height: 150px; max-width: 31%; object-fit: contain;">
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 40%;">
+      <div style="display: flex; justify-content: center; gap: 10px; align-items: center;">
+        <img src="resources/512p/6/image1.jpg" alt="Image 1" style="height: 100px; object-fit: contain;">
+        <img src="resources/512p/6/image2.jpg" alt="Image 2" style="height: 100px; object-fit: contain;">
       </div>
     </td>
-    <td style="text-align: center; vertical-align: middle; padding: 10px;">
-      <img src='resources/512p/9/output.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 60%;">
+      <img src='resources/512p/6/120.gif' style="height: 200px; object-fit: contain;" controls autoplay loop>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 40%;">
+      <div style="display: flex; justify-content: center; gap: 8px; align-items: center; flex-wrap: wrap;">
+        <img src="resources/512p/8/image1.jpg" alt="Image 1" style="height: 70px; object-fit: contain;">
+        <img src="resources/512p/8/image2.jpg" alt="Image 2" style="height: 70px; object-fit: contain;">
+        <img src="resources/512p/8/image3.jpg" alt="Image 3" style="height: 70px; object-fit: contain;">
+      </div>
+    </td>
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 60%;">
+      <img src='resources/512p/8/140.gif' style="height: 200px; object-fit: contain;" controls autoplay loop>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 40%;">
+      <div style="display: flex; justify-content: center; gap: 8px; align-items: center; flex-wrap: wrap;">
+        <img src="resources/512p/9/subject_0.png" alt="Image 1" style="height: 70px; object-fit: contain;">
+        <img src="resources/512p/9/subject_1.png" alt="Image 2" style="height: 70px; object-fit: contain;">
+        <img src="resources/512p/9/subject_2.png" alt="Image 3" style="height: 70px; object-fit: contain;">
+      </div>
+    </td>
+    <td style="text-align: center; vertical-align: middle; padding: 10px; width: 60%;">
+      <img src='resources/512p/9/output.gif' style="height: 200px; object-fit: contain;" controls autoplay loop>
     </td>
   </tr>
 
