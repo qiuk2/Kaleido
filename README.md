@@ -136,7 +136,11 @@ python train_video_concat.py --base configs/video_model/dit_crossattn_14B_wanvae
 Our model can broadly reference various types of images, including humans, objects, and diverse scenarios such as try-on.
 This demonstrates its versatility and generalization ability across different tasks.
 
-<table style="width: 100%; border-collapse: collapse; text-align: center; border: 1px solid #ccc;">
+<table style="width: 100%; border-collapse: collapse; text-align: center; border: 1px solid #ccc; table-layout: fixed;">
+  <colgroup>
+    <col style="width: 45%;">
+    <col style="width: 55%;">
+  </colgroup>
   <tr>
     <th style="text-align: center;">
       <strong>Reference Images</strong>
@@ -148,77 +152,91 @@ This demonstrates its versatility and generalization ability across different ta
 
 
   <tr>
-    <td style="text-align: center; vertical-align: middle;">
-      <img src="resources/512p/2/image1.jpg" alt="Image 1" style="height: 150px;">
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <img src="resources/512p/2/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 100%; object-fit: contain;">
     </td>
-    <td>
-      <img src='resources/512p/2/2.gif' style="height: 150px;" controls autoplay loop>
-    </td>
-  </tr>
-
-  <tr>
-    <td style="text-align: center; vertical-align: middle;">
-      <img src="resources/512p/3/image1.jpg" alt="Image 1" style="height: 150px;">
-      <img src="resources/512p/3/image2.jpg" alt="Image 1" style="height: 150px;">
-    </td>
-    <td>
-      <img src='resources/512p/3/6.gif' style="height: 150px;" controls autoplay loop>
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <img src='resources/512p/2/2.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
     </td>
   </tr>
 
   <tr>
-    <td style="text-align: center; vertical-align: middle;">
-      <img src="resources/512p/4/image1.jpg" alt="Image 1" style="height: 150px;">
-      <img src="resources/512p/4/image2.jpg" alt="Image 1" style="height: 150px;">
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
+        <img src="resources/512p/3/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 48%; object-fit: contain;">
+        <img src="resources/512p/3/image2.jpg" alt="Image 2" style="max-height: 150px; max-width: 48%; object-fit: contain;">
+      </div>
     </td>
-    <td>
-      <img src='resources/512p/4/62.gif' style="height: 150px;" controls autoplay loop>
-    </td>
-  </tr>
-
-
-  <tr>
-    <td style="text-align: center; vertical-align: middle;">
-      <img src="resources/512p/5/image1.jpg" alt="Image 1" style="height: 150px;">
-      <img src="resources/512p/5/image2.jpg" alt="Image 1" style="height: 150px;">
-    </td>
-    <td>
-      <img src='resources/512p/5/109.gif' style="height: 150px;" controls autoplay loop>
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <img src='resources/512p/3/6.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
     </td>
   </tr>
 
   <tr>
-    <td style="text-align: center; vertical-align: middle;">
-      <img src="resources/512p/6/image1.jpg" alt="Image 1" style="height: 150px;">
-      <img src="resources/512p/6/image2.jpg" alt="Image 1" style="height: 150px;">
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
+        <img src="resources/512p/4/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 48%; object-fit: contain;">
+        <img src="resources/512p/4/image2.jpg" alt="Image 2" style="max-height: 150px; max-width: 48%; object-fit: contain;">
+      </div>
     </td>
-    <td>
-      <img src='resources/512p/6/120.gif' style="height: 150px;" controls autoplay loop>
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <img src='resources/512p/4/62.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
     </td>
   </tr>
 
 
   <tr>
-    <td style="text-align: center; vertical-align: middle;">
-      <img src="resources/512p/8/image1.jpg" alt="Image 1" style="height: 150px;">
-      <img src="resources/512p/8/image2.jpg" alt="Image 1" style="height: 150px;">
-      <img src="resources/512p/8/image3.jpg" alt="Image 1" style="height: 150px;">
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
+        <img src="resources/512p/5/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 48%; object-fit: contain;">
+        <img src="resources/512p/5/image2.jpg" alt="Image 2" style="max-height: 150px; max-width: 48%; object-fit: contain;">
+      </div>
     </td>
-    <td>
-      <img src='resources/512p/8/140.gif' style="height: 150px;" controls autoplay loop>
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <img src='resources/512p/5/109.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
     </td>
   </tr>
 
   <tr>
-    <td style="text-align: center; vertical-align: middle;">
-      <img src="resources/512p/9/subject_0.png" alt="Image 1" style="height: 150px;">
-      <img src="resources/512p/9/subject_1.png" alt="Image 1" style="height: 150px;">
-      <img src="resources/512p/9/subject_2.png" alt="Image 1" style="height: 150px;">
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
+        <img src="resources/512p/6/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 48%; object-fit: contain;">
+        <img src="resources/512p/6/image2.jpg" alt="Image 2" style="max-height: 150px; max-width: 48%; object-fit: contain;">
+      </div>
     </td>
-    <td>
-      <img src='resources/512p/9/output.gif' style="height: 150px;" controls autoplay loop>
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <img src='resources/512p/6/120.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
     </td>
   </tr>
+
+
+  <tr>
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
+        <img src="resources/512p/8/image1.jpg" alt="Image 1" style="max-height: 150px; max-width: 31%; object-fit: contain;">
+        <img src="resources/512p/8/image2.jpg" alt="Image 2" style="max-height: 150px; max-width: 31%; object-fit: contain;">
+        <img src="resources/512p/8/image3.jpg" alt="Image 3" style="max-height: 150px; max-width: 31%; object-fit: contain;">
+      </div>
+    </td>
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <img src='resources/512p/8/140.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
+        <img src="resources/512p/9/subject_0.png" alt="Image 1" style="max-height: 150px; max-width: 31%; object-fit: contain;">
+        <img src="resources/512p/9/subject_1.png" alt="Image 2" style="max-height: 150px; max-width: 31%; object-fit: contain;">
+        <img src="resources/512p/9/subject_2.png" alt="Image 3" style="max-height: 150px; max-width: 31%; object-fit: contain;">
+      </div>
+    </td>
+    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+      <img src='resources/512p/9/output.gif' style="max-height: 150px; max-width: 100%; object-fit: contain;" controls autoplay loop>
+    </td>
+  </tr>
+
+</table>
 
 ## Todo List
 - [x] Inference codes and Training codes for Kaleido
