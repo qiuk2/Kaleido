@@ -196,8 +196,8 @@ This demonstrates its versatility and generalization ability across different ta
   <tr>
     <td style="text-align: center; vertical-align: middle; padding: 10px; width: 40%;">
       <div style="display: flex; justify-content: center; gap: 10px; align-items: center;">
-        <img src="resources/512p/6/image1.jpg" alt="Image 1" style="width: 170px; height: 200px; object-fit: contain;">
-        <img src="resources/512p/6/image2.jpg" alt="Image 2" style="width: 170px; height: 200px; object-fit: contain;">
+        <img src="resources/512p/6/image1.jpg" alt="Image 1" style="width: 170px; height: 170px; object-fit: contain;">
+        <img src="resources/512p/6/image2.jpg" alt="Image 2" style="width: 170px; height: 170px; object-fit: contain;">
       </div>
     </td>
     <td style="text-align: center; vertical-align: middle; padding: 10px; width: 60%;">
@@ -209,9 +209,9 @@ This demonstrates its versatility and generalization ability across different ta
   <tr>
     <td style="text-align: center; vertical-align: middle; padding: 10px; width: 40%;">
       <div style="display: flex; justify-content: center; gap: 8px; align-items: center; flex-wrap: wrap;">
-        <img src="resources/512p/8/image1.jpg" alt="Image 1" style="width: 110px; height: 200px; object-fit: contain;">
-        <img src="resources/512p/8/image2.jpg" alt="Image 2" style="width: 110px; height: 200px; object-fit: contain;">
-        <img src="resources/512p/8/image3.png" alt="Image 3" style="width: 110px; height: 200px; object-fit: contain;">
+        <img src="resources/512p/8/image1.jpg" alt="Image 1" style="width: 110px; height: 170px; object-fit: contain;">
+        <img src="resources/512p/8/image2.jpg" alt="Image 2" style="width: 110px; height: 170px; object-fit: contain;">
+        <img src="resources/512p/8/image3.png" alt="Image 3" style="width: 110px; height: 170px; object-fit: contain;">
       </div>
     </td>
     <td style="text-align: center; vertical-align: middle; padding: 10px; width: 60%;">
@@ -222,9 +222,9 @@ This demonstrates its versatility and generalization ability across different ta
   <tr>
     <td style="text-align: center; vertical-align: middle; padding: 10px; width: 40%;">
       <div style="display: flex; justify-content: center; gap: 8px; align-items: center; flex-wrap: wrap;">
-        <img src="resources/512p/9/subject_0.png" alt="Image 1" style="width: 110px; height: 200px; object-fit: contain;">
-        <img src="resources/512p/9/subject_1.png" alt="Image 2" style="width: 110px; height: 200px; object-fit: contain;">
-        <img src="resources/512p/9/subject_2.png" alt="Image 3" style="width: 110px; height: 200px; object-fit: contain;">
+        <img src="resources/512p/9/subject_0.png" alt="Image 1" style="width: 110px; height: 170px; object-fit: contain;">
+        <img src="resources/512p/9/subject_1.png" alt="Image 2" style="width: 110px; height: 170px; object-fit: contain;">
+        <img src="resources/512p/9/subject_2.png" alt="Image 3" style="width: 110px; height: 170px; object-fit: contain;">
       </div>
     </td>
     <td style="text-align: center; vertical-align: middle; padding: 10px; width: 60%;">
