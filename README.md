@@ -32,6 +32,7 @@ This repository contains the official implementation of **Kaleido**, proposed in
 <div align="center">
   <a href='https://arxiv.org/abs/2510.18573'><img src='https://img.shields.io/badge/arXiv-2510.18573-red'></a>
   <a href='https://huggingface.co/Crilias/Kaleido-14B-S2V'><img src='https://img.shields.io/badge/%F0%9F%A4%97_HuggingFace-Model-blue'></a>
+  <a href='https://modelscope.cn/models/AI-ModelScope/Kaleido-14B-S2V'><img src='https://img.shields.io/badge/🤖 ModelScope-blue'></a>
   <a href='https://criliasmiller.github.io/Kaleido_Project/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
 </div>
 
