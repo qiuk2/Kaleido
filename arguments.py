@@ -124,6 +124,7 @@ def add_sampling_config_args(parser):
     group.add_argument('--load_base_model', action='store_true')
     group.add_argument('--base_model_path', type=str, default=None)
     group.add_argument('--fsdp2_ckpt', type=bool, default=False)
+    group.add_argument('--image_root', type=str, default=None)
 
     return parser
 

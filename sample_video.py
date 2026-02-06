@@ -46,6 +46,14 @@ def read_from_file(p, rank=0, world_size=1):
                 continue
             yield l.strip(), cnt
 
+def read_from_json(p, rank=0, world_size=1):
+    with open(p, 'r') as fin:
+        data = json.load(fin)
+        for cnt, item in enumerate(data):
+            if cnt % world_size != rank:
+                continue
+            yield item['prompt_rewritten'], item['refs'], cnt
+
 def get_unique_embedder_keys_from_conditioner(conditioner):
     return list(set([x.input_key for x in conditioner.embedders]))
 
@@ -151,6 +159,9 @@ def sampling_main(args, model_cls):
     elif args.input_type == 'txt':
         dp_rank, dp_world_size = mpu.get_data_parallel_rank(), mpu.get_data_parallel_world_size()
         data_iter = read_from_file(args.input_file, rank=dp_rank, world_size=dp_world_size)
+    elif args.input_type == 'json':
+        dp_rank, dp_world_size = mpu.get_data_parallel_rank(), mpu.get_data_parallel_world_size()
+        data_iter = read_from_json(args.input_file, rank=dp_rank, world_size=dp_world_size)
     else:
         raise NotImplementedError
 
@@ -170,18 +181,20 @@ def sampling_main(args, model_cls):
             stopped = False
             if mpu.get_data_broadcast_rank() == 0:
                 try:
-                    text, cnt = next(data_iter)
+                    text, ref_list, cnt = next(data_iter)
                 except StopIteration:
                     text = ''
+                    ref_list = []
                     stopped = True
 
                 # text = 'FPS-%d. ' % args.sampling_fps + text
 
             else:
                 text = ''
+                ref_list = []
                 cnt = 0
 
-            broadcast_list = [text, cnt, stopped]
+            broadcast_list = [text, ref_list, cnt, stopped]
             # broadcast
             mp_size = mpu.get_model_parallel_world_size()
             sp_size = mpu.get_sequence_parallel_world_size()
@@ -189,21 +202,21 @@ def sampling_main(args, model_cls):
             if mp_size > 1 or sp_size > 1:
                 torch.distributed.broadcast_object_list(broadcast_list, src=mpu.get_data_broadcast_src_rank(), group=mpu.get_data_broadcast_group())
 
-            text, cnt, stopped = broadcast_list
+            text, ref_list, cnt, stopped = broadcast_list
             if stopped:
                 break
 
             if mpu.get_data_broadcast_rank() == 0:
-                print(cnt, ': ', text)
+                print(cnt, ': ', text, len(ref_list))
 
             images_nums = 0
             if args.s2v_concat:
-                infos = text.split('@@')
                 image_size = args.sampling_image_size
                 concat_subjects = []
                 subjects_save = []
-                for subject in infos[1:]:
+                for item in ref_list:
                     images_nums += 1
+                    subject = item["image_path"].replace("/edrive1/kaiq/VER-bench/data/first3k/unknown_first3k", args.image_root)
                     assert os.path.exists(subject), subject
                     ref_img = Image.open(subject).convert('RGB')
                     img_save = np.array(ref_img)
@@ -252,16 +265,14 @@ def sampling_main(args, model_cls):
                 'num_frames': torch.tensor(T).unsqueeze(0)
             }
 
-            save_dir = os.path.join(args.output_dir, str(cnt) + '_' + text.replace(' ', '_').replace('/', '').replace(',','_')[:120])
+            save_dir = args.output_dir
             os.makedirs(save_dir, exist_ok=True)
             if args.only_save_latents:
-                save_path = os.path.join(save_dir, 'latent.pt')
+                save_path = os.path.join(save_dir, f'{cnt:05d}.pt')
             else:
-                save_path = os.path.join(save_dir, 'output.mp4')
+                save_path = os.path.join(save_dir, f'{cnt:05d}.mp4')
             if os.path.exists(save_path):
                 continue
-            with open(os.path.join(save_dir, 'text.txt'), 'w') as f:
-                f.write(text)
 
             model.conditioner.embedders[0].to('cuda')
             batch, batch_uc = get_batch(
@@ -315,7 +326,6 @@ def sampling_main(args, model_cls):
                             samples_x = samples_x.permute(0, 2, 3, 4, 1).squeeze(0).contiguous() # BCTHW -> THWC
                             samples = (torch.clamp((samples_x + 1.0) / 2.0, min=0.0, max=1.0)*255.0).cpu().numpy().astype(np.uint8)
                             if mpu.get_model_parallel_rank() == 0:
-                                save_subject_image_path(subjects_save, save_dir)
                                 with imageio.get_writer(save_path, fps=args.sampling_fps) as writer:
                                     for frame in samples:
                                         writer.append_data(frame)
