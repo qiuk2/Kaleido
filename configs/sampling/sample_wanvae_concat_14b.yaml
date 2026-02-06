@@ -19,4 +19,4 @@ args:
   sampling_fps: 16
   output_dir: results/final_version
   image_root: /edrive1/kaiq/VER-bench/data/first3k/unknown_first3k/
-  sequence_parallel_size: 4
+  sequence_parallel_size: 8

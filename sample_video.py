@@ -334,7 +334,6 @@ def sampling_main(args, model_cls):
                             samples_x = samples_x.permute(0, 2, 3, 4, 1).squeeze(0).contiguous() # BCTHW -> THWC
                             samples = (torch.clamp((samples_x + 1.0) / 2.0, min=0.0, max=1.0)*255.0).cpu().numpy().astype(np.uint8)
                             if mpu.get_model_parallel_rank() == 0:
-                                save_subject_image_path(subjects_save, save_dir)
                                 with imageio.get_writer(save_path, fps=args.sampling_fps) as writer:
                                     for frame in samples:
                                         writer.append_data(frame)
